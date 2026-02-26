@@ -4,16 +4,8 @@ class Wayu < Formula
   version "3.1.0"
   license "MIT"
 
-  on_macos do
-    on_arm do
-      url "https://github.com/dvrd/wayu/releases/download/v3.1.0/wayu-macos-arm64.tar.gz"
-      sha256 "PLACEHOLDER_ARM64"
-    end
-    on_intel do
-      url "https://github.com/dvrd/wayu/releases/download/v3.1.0/wayu-macos-amd64.tar.gz"
-      sha256 "PLACEHOLDER_AMD64"
-    end
-  end
+  url "https://github.com/dvrd/wayu/releases/download/v3.1.0/wayu-macos-arm64.tar.gz"
+  sha256 "cef28f3c4605b3c92b213699f4cf800aa419dca02413215ef2383d7f9b32a8d0"
 
   def install
     bin.install "wayu"
