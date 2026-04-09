@@ -1,11 +1,11 @@
 class Wayu < Formula
   desc "Shell configuration management CLI — PATH, aliases, env vars, plugins"
   homepage "https://github.com/dvrd/wayu"
-  version "3.2.0"
+  version "3.3.0"
   license "MIT"
 
-  url "https://github.com/dvrd/wayu/releases/download/v3.2.0/wayu-macos-arm64.tar.gz"
-  sha256 "a4865902bc9a216ba94e01948e8b39d49dc5b93ae2169c0cde0d7c3b4b1125a9"
+  url "https://github.com/dvrd/wayu/releases/download/v3.3.0/wayu-macos-arm64.tar.gz"
+  sha256 "05c10918b8d363adad9fcd7b7dce3c6632dd805c206b4ff3b1feae3a4ef7cdba"
 
   def install
     bin.install "wayu"
@@ -23,6 +23,6 @@ class Wayu < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/wayu version")
+    assert_match version.to_s, shell_output("#{bin!}/wayu version")
   end
 end
