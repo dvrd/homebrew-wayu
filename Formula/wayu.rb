@@ -1,11 +1,11 @@
 class Wayu < Formula
   desc "Shell configuration management CLI — PATH, aliases, env vars, plugins"
   homepage "https://github.com/dvrd/wayu"
-  version "3.9.0"
+  version "3.10.0"
   license "MIT"
 
-  url "https://github.com/dvrd/wayu/releases/download/v3.9.0/wayu-macos-arm64.tar.gz"
-  sha256 "d725b209d3ff2d4124cbcef554dee0a15dc8a3468332790dce419d0c502e77a7"
+  url "https://github.com/dvrd/wayu/releases/download/v3.10.0/wayu-macos-arm64.tar.gz"
+  sha256 "8b860c8a1dda29923a3b5c82744735615d26d88dd99ed5acb5b3d55956b936f6"
 
   def install
     bin.install "wayu"
@@ -19,9 +19,6 @@ class Wayu < Formula
       Then add this line to your shell RC file:
         source ~/.config/wayu/init.zsh   # zsh
         source ~/.config/wayu/init.bash  # bash
-
-      Or for faster startup, use turbo mode:
-        source ~/.config/wayu/turbo.zsh
     EOS
   end
 
