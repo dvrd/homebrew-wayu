@@ -1,11 +1,11 @@
 class Wayu < Formula
   desc "Shell configuration management CLI — PATH, aliases, env vars, plugins"
   homepage "https://github.com/dvrd/wayu"
-  version "3.14.0"
+  version "3.14.1"
   license "MIT"
 
-  url "https://github.com/dvrd/wayu/releases/download/v3.14.0/wayu-macos-arm64.tar.gz"
-  sha256 "b38f180029b3e2452aedcb2b2ad9c96ec1a487518a9464c3612b897e48d3ca7b"
+  url "https://github.com/dvrd/wayu/releases/download/v3.14.1/wayu-macos-arm64.tar.gz"
+  sha256 "af9a6d06e58607301d9493977f9d7c31ff1cd66c4d71b0d1c6b902676e448075"
 
   def install
     bin.install "wayu"
