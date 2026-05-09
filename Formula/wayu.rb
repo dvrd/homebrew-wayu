@@ -5,7 +5,7 @@ class Wayu < Formula
   license "MIT"
 
   url "https://github.com/dvrd/wayu/releases/download/v4.0.0/wayu-macos-arm64.tar.gz"
-  sha256 "7dcbcd488ddc7ae56b660656800e4bc4935f67837787cfd5241f9fd9b0bef616"
+  sha256 "810d26d3b190575c2e5edae879deb7e548b820ff88e926e7b40d502c1157e4a8"
 
   def install
     bin.install "wayu"
