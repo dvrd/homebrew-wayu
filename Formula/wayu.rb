@@ -1,20 +1,20 @@
 class Wayu < Formula
   desc "Shell configuration management CLI — PATH, aliases, env vars, plugins"
   homepage "https://github.com/dvrd/wayu"
-  version "4.4.4"
+  version "4.4.5"
   license "MIT"
 
   # Prebuilt binaries exist for macOS arm64 and Linux x86_64 only.
   on_macos do
     depends_on arch: :arm64
-    url "https://github.com/dvrd/wayu/releases/download/v4.4.4/wayu-macos-arm64.tar.gz"
-    sha256 "5d8b93678cbb0f27b49c0ef82d2a911d527720e086e4b2129a4d233fa0e03fec"
+    url "https://github.com/dvrd/wayu/releases/download/v4.4.5/wayu-macos-arm64.tar.gz"
+    sha256 "1794cbbd0f6159bd634d3fae974d606c756122f7b53914ce5e88d3813e69e697"
   end
 
   on_linux do
     depends_on arch: :x86_64
-    url "https://github.com/dvrd/wayu/releases/download/v4.4.4/wayu-linux-amd64.tar.gz"
-    sha256 "0c8b6d29aadcc2aa98d5ccbdf60f47b9592d47f713e9f4abf5d884683ed37ddc"
+    url "https://github.com/dvrd/wayu/releases/download/v4.4.5/wayu-linux-amd64.tar.gz"
+    sha256 "c1c31a06a9451d212f70b4c0bc5e33e60407f52d5960f2798e8696d658cbc35d"
   end
 
   def install
