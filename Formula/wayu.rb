@@ -1,20 +1,22 @@
 class Wayu < Formula
   desc "Shell configuration management CLI — PATH, aliases, env vars, plugins"
   homepage "https://github.com/dvrd/wayu"
-  version "6.0.0"
+  version "7.0.0"
   license "MIT"
 
   # Prebuilt binaries exist for macOS arm64 and Linux x86_64 only.
+  # macOS: built for 15.0 and later.
   on_macos do
     depends_on arch: :arm64
-    url "https://github.com/dvrd/wayu/releases/download/v6.0.0/wayu-macos-arm64.tar.gz"
-    sha256 "1de65337c7e168baddc879fd5c5b3c3cb52ea3b2a131220e54389cd3b3c87417"
+    depends_on macos: :sequoia
+    url "https://github.com/dvrd/wayu/releases/download/v7.0.0/wayu-macos-arm64.tar.gz"
+    sha256 "04c82fa30f93d429b0d3a717f9930a6b0b139a4698a150bb519bf04e4fb5a495"
   end
 
   on_linux do
     depends_on arch: :x86_64
-    url "https://github.com/dvrd/wayu/releases/download/v6.0.0/wayu-linux-amd64.tar.gz"
-    sha256 "b2a2b3fc7645771a6e3ee1ae13cb1e80301fc015335162625bba2f52d14b6ddb"
+    url "https://github.com/dvrd/wayu/releases/download/v7.0.0/wayu-linux-amd64.tar.gz"
+    sha256 "18c6bd656fe35465542df701beac73504fd093bc048593a84e2bcdbfae73d0b4"
   end
 
   def install
@@ -23,12 +25,17 @@ class Wayu < Formula
 
   def caveats
     <<~EOS
-      Initialize wayu config files by running:
+      Set wayu up by running:
         wayu init
 
-      Then add this line to your shell RC file:
-        source ~/.config/wayu/init.zsh   # zsh
-        source ~/.config/wayu/init.bash  # bash
+      It creates ~/.config/wayu (wayu.toml) and the data dir
+      ~/.local/share/wayu, and offers to add the line that loads wayu to
+      your shell rc file. To add it yourself:
+        zsh  (~/.zshrc):
+          source "${WAYU_DATA_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/wayu}/init.zsh"
+        bash (~/.bash_profile or ~/.bashrc):
+          source "${WAYU_DATA_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/wayu}/init.bash"
+        fish: see "Shell setup" in https://github.com/dvrd/wayu#shell-setup
     EOS
   end
 
