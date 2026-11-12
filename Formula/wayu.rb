@@ -1,22 +1,33 @@
 class Wayu < Formula
   desc "Shell configuration management CLI — PATH, aliases, env vars, plugins"
   homepage "https://github.com/dvrd/wayu"
-  version "7.0.0"
+  version "8.0.0"
   license "MIT"
 
-  # Prebuilt binaries exist for macOS arm64 and Linux x86_64 only.
-  # macOS: built for 15.0 and later.
+  # Prebuilt binaries: macOS arm64 + x86_64 (15.0 and later),
+  # Linux x86_64 + arm64.
   on_macos do
-    depends_on arch: :arm64
     depends_on macos: :sequoia
-    url "https://github.com/dvrd/wayu/releases/download/v7.0.0/wayu-macos-arm64.tar.gz"
-    sha256 "04c82fa30f93d429b0d3a717f9930a6b0b139a4698a150bb519bf04e4fb5a495"
+
+    on_arm do
+      url "https://github.com/dvrd/wayu/releases/download/v8.0.0/wayu-macos-arm64.tar.gz"
+      sha256 "5140f223f4f37d573971a0fda8b8a3ba8e3aa5e5d17dcfba8f4c13f6ecdb068f"
+    end
+    on_intel do
+      url "https://github.com/dvrd/wayu/releases/download/v8.0.0/wayu-macos-amd64.tar.gz"
+      sha256 "80238f281d0a101a0d0b36c182118b491baf782bf25800b8c87784f93f0c4383"
+    end
   end
 
   on_linux do
-    depends_on arch: :x86_64
-    url "https://github.com/dvrd/wayu/releases/download/v7.0.0/wayu-linux-amd64.tar.gz"
-    sha256 "18c6bd656fe35465542df701beac73504fd093bc048593a84e2bcdbfae73d0b4"
+    on_arm do
+      url "https://github.com/dvrd/wayu/releases/download/v8.0.0/wayu-linux-arm64.tar.gz"
+      sha256 "ccef5252c936a1ec51713eacb9239215b5cd46b8e54d3cf1235343d40d6ed58a"
+    end
+    on_intel do
+      url "https://github.com/dvrd/wayu/releases/download/v8.0.0/wayu-linux-amd64.tar.gz"
+      sha256 "51291a9dc56eff560486f36721359c43665a2c97a849a7ceeb7e1520e34e45b5"
+    end
   end
 
   def install
